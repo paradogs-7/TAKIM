@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1233,8 +1233,7 @@ AudioSource:
   m_GameObject: {fileID: 506744110}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: -3331905737259239861, guid: eb663871f069a614082e33c67417d35d,
-    type: 2}
+  OutputAudioMixerGroup: {fileID: -3331905737259239861, guid: eb663871f069a614082e33c67417d35d, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -2544,9 +2543,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11500000, guid: c2e4bf48bfa638942a80e96c969ac170, type: 3}
+      - m_Target: {fileID: 1321272949}
         m_TargetAssemblyTypeName: main_menu, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: PlayGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3205,6 +3204,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1321272947}
   - component: {fileID: 1321272948}
+  - component: {fileID: 1321272949}
   m_Layer: 5
   m_Name: main menu
   m_TagString: Untagged
@@ -3246,6 +3246,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 307f4b6cf8498d049b59a27363be0348, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1321272949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1321272946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2e4bf48bfa638942a80e96c969ac170, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1337465989
