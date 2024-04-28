@@ -25,7 +25,7 @@ public class WeaponController : MonoBehaviour
             {
                 Shoot();
                 shoot.SetTrigger("shootPistol");
-                timeBtwShoot = 0.8f;
+                timeBtwShoot = 0.5f;
             }
         }
 
