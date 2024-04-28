@@ -5,7 +5,7 @@ using UnityEngine;
 public class RangedEnemyController : MonoBehaviour
 {
     public float moveSpeed; // Düşmanın hareket hızı
-    public Transform player; // Oyuncu referansı
+    public Transform playerTransform; // Oyuncu referansı
     public Transform shotPoint; // Mermi çıkış noktası
     public Transform gun; // Silahın transformu
     public GameObject enemyProjectile; // Düşmanın ateş ettiği mermi prefab'ı
@@ -21,12 +21,12 @@ public class RangedEnemyController : MonoBehaviour
     {
         Flip();
         // Silahın oyuncuya doğru dönmesi
-        Vector3 differance = player.position - gun.transform.position;
+        Vector3 differance = playerTransform.position - gun.transform.position;
         float rotZ = Mathf.Atan2(differance.y, differance.x) * Mathf.Rad2Deg;
         gun.transform.rotation = Quaternion.Euler(0f, 0f, rotZ);
 
         // Oyuncu menzilde mi kontrolü
-        if (Vector2.Distance(transform.position, player.position) <= followPlayerRange && Vector2.Distance(transform.position, player.position) > attackRange)
+        if (Vector2.Distance(transform.position, playerTransform.position) <= followPlayerRange && Vector2.Distance(transform.position, playerTransform.position) > attackRange)
         {
             inRange = true;
         }
@@ -36,7 +36,7 @@ public class RangedEnemyController : MonoBehaviour
         }
 
         // Oyuncu menzildeyse ve ateş menziline girmişse
-        if (Vector2.Distance(transform.position, player.position) <= attackRange)
+        if (Vector2.Distance(transform.position, playerTransform.position) <= attackRange)
         {
             // Mermi atma aralığı kontrolü
             if (timeBtwnShots <= 0)
@@ -56,10 +56,11 @@ public class RangedEnemyController : MonoBehaviour
 
     void FixedUpdate()
     {
+        playerTransform = GameObject.FindGameObjectWithTag("Player").transform;     
         // Oyuncu menzildeyse, oyuncuyu takip et
         if (inRange)
         {
-            transform.position = Vector2.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, playerTransform.position, moveSpeed * Time.deltaTime);
         }
     }
 
