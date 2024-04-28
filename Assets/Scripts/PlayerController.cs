@@ -23,7 +23,6 @@ public class PlayerController : MonoBehaviour
     private bool isGameOver = false;
     public GameObject gameOverPanel;
     public int score = 0;
-
     public Animator animDoctor;
     private float f1, f2;
     private bool checkIsRunning;

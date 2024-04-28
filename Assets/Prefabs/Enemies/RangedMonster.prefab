@@ -266,7 +266,7 @@ MonoBehaviour:
   enemyProjectile: {fileID: 3702330984422287450, guid: 6d0ade89a5e5f8847bda4ab2dfa9fb14, type: 3}
   maxHealth: 500
   followPlayerRange: 15
-  damage: 50
+  damage: 100
   attackRange: 7
   startTimeBtwnShots: 0.4
 --- !u!61 &-5937690082348295505
