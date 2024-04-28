@@ -18,6 +18,7 @@ public class RangedEnemyController : MonoBehaviour
     public float startTimeBtwnShots; // Mermi atma aralığı
     private float timeBtwnShots; // Sonraki mermi atışı için zaman sayacı
     private bool isFlipped;
+    private PlayerController player_controller;
     void Update()
     {
         Flip();
@@ -57,7 +58,7 @@ public class RangedEnemyController : MonoBehaviour
 
     void FixedUpdate()
     {
-        playerTransform = GameObject.FindGameObjectWithTag("Player").transform;     
+        playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
         // Oyuncu menzildeyse, oyuncuyu takip et
         if (inRange)
         {
@@ -77,6 +78,9 @@ public class RangedEnemyController : MonoBehaviour
             // Canı 0'dan küçük veya eşitse
             if (maxHealth <= 0)
             {
+                player_controller = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+                 if(player_controller.currentTime<80){
+                    player_controller.currentTime += 10;}
                 // Ölüm fonksiyonunu çağır
                 Die();
             }

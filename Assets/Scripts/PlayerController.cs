@@ -48,6 +48,9 @@ public class PlayerController : MonoBehaviour
         f1 = movement.x = Input.GetAxisRaw("Horizontal");
         f2 = movement.y = Input.GetAxisRaw("Vertical");
         checkIsRunning = (Mathf.Abs(f1) > 0 || Mathf.Abs(f2) > 0) ? true : false;
+        if(currentTime >80){
+            currentTime = 80;
+        }
 
         // Timer'ı azalt
         timer -= Time.deltaTime;
