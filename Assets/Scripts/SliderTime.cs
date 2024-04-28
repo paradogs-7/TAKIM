@@ -8,16 +8,22 @@ public class SliderTime : MonoBehaviour
     private PlayerController player_controller;
     private Slider timeSlider; // Slider bileşeni referansı
     public float current_time;
+  
 
     void Start()
     {
         player_controller = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
         timeSlider = GameObject.FindGameObjectWithTag("Slider").GetComponent<Slider>(); // Slider bileşenini al
     }
-
+    
     void Update()
     {
+        player_controller = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
         SlideTime();
+        if (player_controller.currentTime == 0)
+        {
+            timeSlider.gameObject.SetActive(false);
+        }
     }
 
     void SlideTime()
