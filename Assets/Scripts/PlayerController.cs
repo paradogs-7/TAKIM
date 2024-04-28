@@ -88,6 +88,7 @@ public class PlayerController : MonoBehaviour
         // Eğer Player düşman objesiyle temas ederse
         if (other.CompareTag("Enemy1"))
         {
+            
             Debug.Log("Enemy ile temasss");
             // Zamanı azalt
             currentTime -= damageAmount;
