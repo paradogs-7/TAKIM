@@ -265,8 +265,8 @@ MonoBehaviour:
   gun: {fileID: 2011415495972237542}
   enemyProjectile: {fileID: 3702330984422287450, guid: 6d0ade89a5e5f8847bda4ab2dfa9fb14, type: 3}
   deathEffect: {fileID: 5531341667774610391, guid: c7ff8a48a0ac1bb46b4d0524242f2dec, type: 3}
-  maxHealth: 500
-  followPlayerRange: 15
+  maxHealth: 300
+  followPlayerRange: 20
   damage: 50
   attackRange: 7
   startTimeBtwnShots: 0.4
