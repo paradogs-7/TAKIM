@@ -15,6 +15,6 @@ EditorBuildSettings:
     path: Assets/Sprites/Assets/Scenes/2_Loading_Screen.unity
     guid: 7fa53052d9564cf4d96de763cda15d2c
   - enabled: 1
-    path: Assets/Sprites/Assets/Scenes/SampleScene.unity
+    path: Assets/Sprites/Assets/Scenes/Bozuk.unity
     guid: d8a8abac6bbf1f143a2abf20253a72c0
   m_configObjects: {}

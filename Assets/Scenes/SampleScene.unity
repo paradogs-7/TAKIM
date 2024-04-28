@@ -1282,9 +1282,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 940352569335112687, guid: 7ff47f06fd5107b41ab813a49a4c7acd, type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 940352569335112687, guid: 7ff47f06fd5107b41ab813a49a4c7acd, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 1687143646376821579, guid: 7ff47f06fd5107b41ab813a49a4c7acd, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 5306461716337456239, guid: 7ff47f06fd5107b41ab813a49a4c7acd, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -811
+      objectReference: {fileID: 0}
+    - target: {fileID: 5306461716337456239, guid: 7ff47f06fd5107b41ab813a49a4c7acd, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 459
       objectReference: {fileID: 0}
     - target: {fileID: 7452845818249550415, guid: 7ff47f06fd5107b41ab813a49a4c7acd, type: 3}
       propertyPath: m_LocalPosition.x
