@@ -9,24 +9,30 @@ public class WeaponController : MonoBehaviour
     public Transform firePoint;
     public GameObject bulletPrefab;
     public float bulletSpeed = 20f;
-
+    private float timeBtwShoot = 0f;
     private bool isFlipped;
     private Vector2 mousePosition;
     private bool isGunFlipped = false;
 
     void Update()
     {
+        timeBtwShoot -= Time.deltaTime;
         firePointRotation();
         AimWeapon();
-        if (Input.GetMouseButtonDown(0))
+        if (timeBtwShoot <= 0)
         {
-            Shoot();
-            shoot.SetTrigger("shootPistol");
+            if (Input.GetMouseButtonDown(0))
+            {
+                Shoot();
+                shoot.SetTrigger("shootPistol");
+                timeBtwShoot = 0.8f;
+            }
         }
+
     }
     private void FixedUpdate()
     {
-        
+
     }
     public void AimWeapon()
     {
