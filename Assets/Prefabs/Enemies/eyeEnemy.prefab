@@ -155,7 +155,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc37edd80da6d11438c80affa2cd0fe6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 50
-  moveSpeed: 10
+  maxHealth: 200
+  moveSpeed: 4
   damage: 100
   timeToAdd: 20
+  deathEffect: {fileID: 5531341667774610391, guid: c7ff8a48a0ac1bb46b4d0524242f2dec, type: 3}

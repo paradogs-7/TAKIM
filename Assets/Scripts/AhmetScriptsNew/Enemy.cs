@@ -12,6 +12,7 @@ public class Enemy : MonoBehaviour
     public float timeToAdd = 20f;
     private PlayerController player_controller; // PlayerController referansı
     private bool isFlipped;
+    public GameObject deathEffect;
     void Start()
     {
         currentHealth = maxHealth;
@@ -35,8 +36,8 @@ public class Enemy : MonoBehaviour
     void Die()
     {
         // Düşman öldüğünde yapılacak işlemler
-        // Bu kısımda düşmanın yok edilmesi veya animasyonu yer alabilir
-        Debug.Log("Died Enemy");
+        GameObject effect = Instantiate(deathEffect, transform.position, Quaternion.identity);
+        Destroy(effect, 0.45f);
         AddScore();
         AddTime();
         this.gameObject.SetActive(false);
