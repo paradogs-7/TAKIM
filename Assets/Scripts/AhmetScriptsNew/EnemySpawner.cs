@@ -5,12 +5,13 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    public GameObject enemyPrefab; // Spawn edilecek düşmanın prefab'ı
+    //public GameObject enemyPrefab; // Spawn edilecek düşmanın prefab'ı
     public float spawnRadius = 5f; // Düşmanların spawn olacağı alanın yarıçapı
     public int spawnCount = 10; // Toplam spawn edilecek düşman sayısı
     public float spawnInterval = 1f; // Düşmanların spawn edilme aralığı
     public float innerRadius = 2f; // İç bölgede spawn edilen düşmanların orta noktaya olan en yakın mesafesi
     public bool isMatched = false;
+    public GameObject[] enemies;
 
     [SerializeField] private GameObject nextWaveActivator;
 
@@ -31,7 +32,10 @@ public class EnemySpawner : MonoBehaviour
             }
 
             // Düşmanı spawn et
-            Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
+            
+            int randEnemy = Random.Range(0, enemies.Length);
+            Instantiate(enemies[randEnemy], spawnPosition, Quaternion.identity);
+         
             // Belirtilen aralık kadar bekle
             yield return new WaitForSeconds(spawnInterval);
         }
