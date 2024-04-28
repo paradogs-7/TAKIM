@@ -9,6 +9,7 @@ public class RangedEnemyController : MonoBehaviour
     public Transform shotPoint; // Mermi çıkış noktası
     public Transform gun; // Silahın transformu
     public GameObject enemyProjectile; // Düşmanın ateş ettiği mermi prefab'ı
+    public GameObject deathEffect;
     public float maxHealth = 500f; // Düşmanın maksimum canı
     public float followPlayerRange; // Oyuncuyu takip etme menzili
     public float damage = 50f;
@@ -85,6 +86,8 @@ public class RangedEnemyController : MonoBehaviour
     private void Die()
     {
         // Düşmanı yok et
+        GameObject effect = Instantiate(deathEffect, transform.position, Quaternion.identity);
+        Destroy(effect, 0.5f);
         Destroy(gameObject);
     }
 
