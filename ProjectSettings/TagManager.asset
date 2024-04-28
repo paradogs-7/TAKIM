@@ -11,6 +11,7 @@ TagManager:
   - Enemy1
   - PlayerBullet
   - MatchController
+  - Slider
   layers:
   - Default
   - TransparentFX

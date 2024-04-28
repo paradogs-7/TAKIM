@@ -23,6 +23,6 @@ public class SliderTime : MonoBehaviour
     void SlideTime()
     {
         current_time = player_controller.currentTime;
-        timeSlider.value = current_time / 80f; // Slider'ın değerini güncelle
+        timeSlider.value = current_time; // Slider'ın değerini güncelle
     }
 }
