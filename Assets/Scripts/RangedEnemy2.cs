@@ -87,7 +87,7 @@ public class RangedEnemyController : MonoBehaviour
     {
         // Düşmanı yok et
         GameObject effect = Instantiate(deathEffect, transform.position, Quaternion.identity);
-        Destroy(effect, 0.5f);
+        Destroy(effect, 0.45f);
         Destroy(gameObject);
     }
 
