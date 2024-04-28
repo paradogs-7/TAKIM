@@ -27,7 +27,7 @@ public class ShootgunController : MonoBehaviour
             if (Input.GetMouseButtonDown(0))
             {
                 Shoot();
-                shoot.SetTrigger("shootPistol");
+                shoot.SetTrigger("shootShotgun");
                 timeBtwShoot = 0.5f;
             }
         }
