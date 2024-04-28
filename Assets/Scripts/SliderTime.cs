@@ -18,10 +18,12 @@ public class SliderTime : MonoBehaviour
     
     void Update()
     {
-        player_controller = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
+        current_time = player_controller.currentTime;
+        Debug.Log("Current time: " + current_time);
         SlideTime();
-        if (player_controller.currentTime == 0)
-        {
+        if (current_time <= 0)
+        {   
+            Debug.Log("player's current time is 0");
             timeSlider.gameObject.SetActive(false);
         }
     }
