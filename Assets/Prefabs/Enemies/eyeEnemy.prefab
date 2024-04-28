@@ -159,3 +159,4 @@ MonoBehaviour:
   moveSpeed: 10
   damage: 100
   timeToAdd: 20
+  deathEffect: {fileID: 5531341667774610391, guid: c7ff8a48a0ac1bb46b4d0524242f2dec, type: 3}
