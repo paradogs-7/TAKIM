@@ -30,6 +30,7 @@ public class PlayerController : MonoBehaviour
     private Vector2 mousePosition;
     public Transform doctorTransform;
     private float timeBtwShoot = 0f;
+    private bool isFlipped;
 
     void Start()
     {
@@ -39,6 +40,15 @@ public class PlayerController : MonoBehaviour
     }
     void Update()
     {
+        timeBtwShoot -= Time.deltaTime;
+        mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        movement.x = Input.GetAxisRaw("Horizontal");
+        movement.y = Input.GetAxisRaw("Vertical");
+
+        f1 = movement.x = Input.GetAxisRaw("Horizontal");
+        f2 = movement.y = Input.GetAxisRaw("Vertical");
+        checkIsRunning = (Mathf.Abs(f1) > 0 || Mathf.Abs(f2) > 0) ? true : false;
+
         // Timer'ı azalt
         timer -= Time.deltaTime;
         // Eğer timer 0'a ulaşırsa
@@ -55,9 +65,19 @@ public class PlayerController : MonoBehaviour
         {
             Die();
         }
+        if (timeBtwShoot <= 0)
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+                currentTime -= 3;
+                timeBtwShoot = 0.8f;
+            }
+        }
     }
     private void FixedUpdate()
     {
+        FlipPlayer();
+        animDoctor.SetBool("isRun", checkIsRunning);
         if (!isGameOver)
         {
             // Player'ın yatay ve dikey hareketini al
@@ -113,6 +133,47 @@ public class PlayerController : MonoBehaviour
     {
         // Aktif olan sahneyi tekrar yükle
         UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
+    }
+    public void FlipPlayer()
+    {
+        // Fare konumunu dünya koordinatlarına dönüştür.
+        mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+        // Silahın konumunu ve fare konumu arasındaki yönü bul.
+        Vector2 lookDirection = mousePosition - (Vector2)transform.position;
+
+        // Yön vektöründen açıyı hesapla.
+        float angle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg;
+
+        if (angle < -90 && angle > -180)//3. bolge
+        {
+            if (!isFlipped)
+            {
+                FlipDoctor();
+            }
+        }
+        else if (angle > 90 && angle < 180)// 2. bolge
+        {
+            if (!isFlipped)
+            {
+                FlipDoctor();
+            }
+        }
+        else
+        {
+            if (isFlipped)
+            {
+                FlipDoctor();
+            }
+
+        }
+        // doctorin transformunu x ekseninde degistiriyor
+        void FlipDoctor()
+        {
+            doctorTransform.localScale = new Vector3(-doctorTransform.localScale.x, doctorTransform.localScale.y, doctorTransform.localScale.z);
+            //doctorTransform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
+            isFlipped = !isFlipped;
+        }
     }
 }
 
