@@ -60,8 +60,8 @@ MonoBehaviour:
   dashCooldown: 1
   dashCounter: 2
   dashCoolCounter: 3
-  maxTime: 200
-  currentTime: 200
+  maxTime: 80
+  currentTime: 0
   timeDecreaseSpeed: 1
   damageAmount: 10
   TimeText: {fileID: 940352569335112687}
