@@ -8,7 +8,7 @@ public class Player_Sound : MonoBehaviour
 
     private float timeBtwShoot = 0f;
     private AudioSource audioSource;
-    private bool isWeaponVisible = true;
+    
     
     void Start()
     {
